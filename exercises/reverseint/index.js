@@ -14,9 +14,18 @@ function reverseInt(n) {
     .split('')
     .reverse()
     .join('');
-  const revInt = parseInt(reversed);
-  return Math.sign(n) === -1 ? revInt * -1 : revInt;
+  return parseInt(reversed) * Math.sign(n);
 }
+
+// function reverseInt(n) {
+//   const reversed = n
+//     .toString()
+//     .split('')
+//     .reverse()
+//     .join('');
+//   const revInt = parseInt(reversed);
+//   return Math.sign(n) === -1 ? revInt * -1 : revInt;
+// }
 
 // function reverseInt(n) {
 //   const stringInt = '' + n;
