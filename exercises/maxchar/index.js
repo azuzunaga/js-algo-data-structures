@@ -11,10 +11,7 @@ function maxChar(str) {
   let maxChar = '';
 
   for (let char of str) {
-    strCount[char] = strCount[char]++ || 1;
-  }
-
-  for (let char in strCount) {
+    strCount[char] = strCount[char] + 1 || 1;
     if (strCount[char] > max) {
       max = strCount[char];
       maxChar = char;
@@ -22,6 +19,24 @@ function maxChar(str) {
   }
   return maxChar;
 }
+
+// function maxChar(str) {
+//   const strCount = {};
+//   let max = 0;
+//   let maxChar = '';
+
+//   for (let char of str) {
+//     strCount[char] = strCount[char]++ || 1;
+//   }
+
+//   for (let char in strCount) {
+//     if (strCount[char] > max) {
+//       max = strCount[char];
+//       maxChar = char;
+//     }
+//   }
+//   return maxChar;
+// }
 
 // function maxChar(str) {
 //   const strCount = {};
