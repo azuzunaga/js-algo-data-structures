@@ -10,18 +10,31 @@
 
 function chunk(array, size) {
   const results = [];
-  let interArray = [];
   for (let item of array) {
-    if (interArray.length < size) {
-      interArray.push(item);
+    let lastArray = results[results.length - 1];
+    if (!lastArray || lastArray.length === size) {
+      results.push([item]);
     } else {
-      results.push(interArray);
-      interArray = [];
-      interArray.push(item);
+      lastArray.push(item);
     }
   }
-  results.push(interArray);
   return results;
 }
+
+// function chunk(array, size) {
+//   const results = [];
+//   let interArray = [];
+//   for (let item of array) {
+//     if (interArray.length < size) {
+//       interArray.push(item);
+//     } else {
+//       results.push(interArray);
+//       interArray = [];
+//       interArray.push(item);
+//     }
+//   }
+//   results.push(interArray);
+//   return results;
+// }
 
 module.exports = chunk;
