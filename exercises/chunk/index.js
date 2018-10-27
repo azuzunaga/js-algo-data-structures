@@ -10,16 +10,27 @@
 
 function chunk(array, size) {
   const results = [];
-  for (let item of array) {
-    let lastArray = results[results.length - 1];
-    if (!lastArray || lastArray.length === size) {
-      results.push([item]);
-    } else {
-      lastArray.push(item);
-    }
+  let idx = 0;
+  while (idx < array.length) {
+    results.push(array.slice(idx, idx + size));
+    idx += size;
   }
   return results;
 }
+
+
+// function chunk(array, size) {
+//   const results = [];
+//   for (let item of array) {
+//     let lastArray = results[results.length - 1];
+//     if (!lastArray || lastArray.length === size) {
+//       results.push([item]);
+//     } else {
+//       lastArray.push(item);
+//     }
+//   }
+//   return results;
+// }
 
 // function chunk(array, size) {
 //   const results = [];
