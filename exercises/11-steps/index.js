@@ -18,20 +18,34 @@
 //       '####'
 
 function steps(n) {
-  let chars = '';
-  let charsCounter = 1;
-  while (charsCounter <= n) {
-    let spaces = '';
-    let spaceCounter = n - charsCounter;
-    while (spaceCounter >= 1) {
-      spaces += ' ';
-      spaceCounter -= 1;
+  for (let row = 0; row < n; row++) {
+    let stair = '';
+    for (let col = 0; col < n; col++) {
+      if (col <= row) {
+        stair += '#';
+      } else {
+        stair += ' ';
+      }
     }
-    chars += '#';
-    charsCounter += 1;
-    console.log(chars + spaces);
+    console.log(stair);
   }
-  return;
 }
+
+// function steps(n) {
+//   let chars = '';
+//   let charsCounter = 1;
+//   while (charsCounter <= n) {
+//     let spaces = '';
+//     let spaceCounter = n - charsCounter;
+//     while (spaceCounter >= 1) {
+//       spaces += ' ';
+//       spaceCounter -= 1;
+//     }
+//     chars += '#';
+//     charsCounter += 1;
+//     console.log(chars + spaces);
+//   }
+//   return;
+// }
 
 module.exports = steps;
