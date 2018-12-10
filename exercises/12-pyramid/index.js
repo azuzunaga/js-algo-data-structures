@@ -14,6 +14,8 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+  // Number of rows is equal to n, number of columns is equal to 2*n - 1
+}
 
 module.exports = pyramid;
