@@ -19,17 +19,18 @@ function pyramid(n, row = 0, level = '') {
     return;
   }
 
-  const middle = Math.floor((n * 2 - 1) / 2);
-
   if (n * 2 - 1 === level.length) {
     console.log(level);
     return pyramid(n, row + 1);
   }
-  let add = '';
+
+  const middle = Math.floor((n * 2 - 1) / 2);
+
+  let add;
   if (level.length >= middle - row && level.length <= middle + row) {
-    add += '#';
+    add = '#';
   } else {
-    add += ' ';
+    add = ' ';
   }
   return pyramid(n, row, level + add);
 }
