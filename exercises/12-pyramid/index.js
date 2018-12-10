@@ -16,9 +16,11 @@
 
 function pyramid(n) {
   // Number of rows is equal to n, number of columns is equal to 2*n - 1
+  const middle = Math.floor((n * 2 - 1) / 2);
+
   for (let row = 0; row < n; row++) {
     let level = '';
-    const middle = Math.floor((n * 2 - 1) / 2);
+
     for (let col = 0; col < n * 2 - 1; col++) {
       if (col >= middle - row && col <= middle + row) {
         level += '#';
