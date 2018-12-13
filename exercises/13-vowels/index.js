@@ -7,6 +7,17 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+function vowels(str) {
+  const vowelMap = { a: 0, e: 0, i: 0, o: 0, u: 0 };
+
+  str.split('').forEach(char => {
+    const lcChar = char.toLowerCase();
+    if (vowelMap[lcChar] || vowelMap[lcChar] === 0) {
+      vowelMap[char.toLowerCase()] += 1;
+    }
+  });
+
+  return Object.values(vowelMap).reduce((sum, count) => sum + count, 0);
+}
 
 module.exports = vowels;
