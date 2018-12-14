@@ -8,14 +8,27 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-  const vowelMap = { a: true, e: true, i: true, o: true, u: true };
   let count = 0;
+  const checker = ['a', 'e', 'i', 'o', 'u'];
 
-  str.split('').forEach(char => {
-    if (vowelMap[char.toLowerCase()]) count++;
-  });
+  for (let char of str.toLowerCase()) {
+    if (checker.includes(char)) {
+      count++;
+    }
+  }
 
   return count;
 }
+
+// function vowels(str) {
+//   const vowelMap = { a: true, e: true, i: true, o: true, u: true };
+//   let count = 0;
+
+//   str.split('').forEach(char => {
+//     if (vowelMap[char.toLowerCase()]) count++;
+//   });
+
+//   return count;
+// }
 
 module.exports = vowels;
